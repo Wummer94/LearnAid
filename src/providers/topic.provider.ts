@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { ConnectionProvider } from './connection.provider';
 
 /*
   Generated class for the Topic provider.
@@ -13,20 +12,35 @@ export class Topic {
 
   public topics = new Array();
 
-  constructor(public http: Http) {
-    this.generateTopicData(); 
+  constructor(public connection: ConnectionProvider) {
+    this.loadTopicsFromAPI(); 
   }
 
   getTopicKeyByID(id){
     for (let key in this.topics) {
-      if (this.topics[key].id == id) {
+      if (this.topics[key].id_topic == id) {
         return key;
       }
     }
  }
 
-  getProjectById(id) {
-    return this.topics[this.getTopicKeyByID(id)];
+  loadTopicsFromAPI() {
+   var asd = this;
+    this.connection.getReqeuest('/api/v1/topics', function (results) {
+      asd.topics = Object.assign(asd.topics,results);
+      console.log(asd.topics);
+    });
+  }
+
+
+  addTopicToApi(topics) {
+    var h = this;
+    return this.connection.postReqeuest('/api/v1/topic', topics, function (results) {
+      if (results.errorCode == null) {
+        h.loadTopicsFromAPI();
+        return this.getTopicById(topics.id);
+      }
+    });
   }
 
  deleteTopic(id){

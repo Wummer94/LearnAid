@@ -40,14 +40,24 @@ themeSelected(item){
 }
 
 newEasyTheme(){
-
+ let easyCard = new Object()
+ easyCard['easyThemeQuestion']= "New card question";
+ easyCard['easyThemeAnswer'] ="New card answer";
+ this.EasyCard.addEasyTheme(easyCard);
 }
 
 newMediumTopic(){
-
+  let mediumCard = new Object();
+  mediumCard['mediumThemeQuestion'] = "New card question";
+  mediumCard['mediumThemeAnswer'] = "New card question";
+  this.MediumCard.addMediumTheme(mediumCard);
 }
 
 newHardTopic(){
+  let hardCard = new Object();
+  hardCard['hardThemeQuestion'] = "New card question";
+  hardCard['hardThemeAnswer'] = "New card question";
+  this.HardCard.addHardTheme(hardCard);
 
 }
 

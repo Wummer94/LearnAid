@@ -16,6 +16,7 @@ import {EasyCard} from '../providers/easy-card.provider';
 import {HardCard} from '../providers/hard-card.provider';
 import {MediumCard} from '../providers/medium-card.provider';
 import {Topic} from '../providers/topic.provider';
+import{ConnectionProvider} from '../providers/connection.provider';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {Topic} from '../providers/topic.provider';
   EasyCard, 
   MediumCard, 
   HardCard, 
-  Topic ]
+  Topic,
+  ConnectionProvider ]
 })
 export class AppModule {}

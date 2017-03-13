@@ -1,7 +1,7 @@
 # LearnAid
 
 ## Description
-The LearnAid is a Card System in
+The LearnAid is a Card System in 
 
 ## Installation
 * git clone https://github.com/Wummer94/LearnAid

@@ -16,7 +16,7 @@
 <ion-content padding>
 
   <h3>New Topic</h3>
-  <ion-input placeholder="Topic" [(ngModel)]="topic"></ion-input>
-  <button ion-button (click)="saveTopic(topic)">Save</button>
+  <ion-input placeholder="Topic">{{topic.name}}</ion-input>
+  <button ion-button (click)="saveTopic()">Save</button>
 
 </ion-content>
