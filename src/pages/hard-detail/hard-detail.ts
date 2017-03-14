@@ -28,7 +28,5 @@ export class HardDetailPage {
     this.navCtrl.pop();
   }
   
-  // change the page and now you can add new medium Cards in Input Failds
-
 
 }

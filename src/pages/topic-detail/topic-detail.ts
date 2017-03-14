@@ -27,6 +27,8 @@ export class TopicDetailPage {
   constructor(public navCtrl: NavController, public toastCtrl: ToastController, public navParams: NavParams, public Topic:Topic) {
   }
   
+
+  // add a new Topic and go back to the main topic page
   saveTopic(){
     this.Topic.addTopicToApi(this.newTopic);
     this.navCtrl.setRoot(TopicPage);

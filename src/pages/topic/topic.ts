@@ -29,14 +29,17 @@ export class TopicPage {
     console.log(this.topics);
   }
 
+// Select on topic in a list and go to the themen Page
 topicSelected(item){
   this.navCtrl.push(ThemePage, {id: item.id});
 }
 
+// should delete a Topic but dont
 deleteTopic(){
   this.Topic.deleteTopic(this.topics);
 }
 
+// Pushes the page topic detail then you can make a new topic
 newTopic(){
   this.navCtrl.push(TopicDetailPage);
 }

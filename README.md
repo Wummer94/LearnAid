@@ -18,3 +18,9 @@ LearnAid helps you learn all the topics according to your ideas with a card syst
 * cd server
 * npm i
 * node index.js
+
+
+## System requirements
+* Node.js
+* Codovar npm install -g ionic cordova
+* Xampp MySql and Apache

@@ -37,6 +37,8 @@ export class ThemePage {
     this.hardThemes = HardCard.getAllHardThemes();
   }
 
+  
+ // Which page is used by the three lists
   selectListItem(type, id) {
     let detailPage;
     if (type == 'easy') {
@@ -50,19 +52,21 @@ export class ThemePage {
     }
 
     if (detailPage) {
-      this.navCtrl.push(detailPage, {id: id}); //id: item.id 
+      this.navCtrl.push(detailPage, {id: id});
     }
   }
 
-
+// after you press the + button you can add a easy card
 newEasyTheme(){
  this.navCtrl.push(CardDetailPage);
 }
 
+// after you press the + button you can add a medium card
 newMediumTopic(){
   this.navCtrl.push(MediumDetailPage);
 }
 
+// after you press the + button you can add a hard card
 newHardTopic(){
   this.navCtrl.push(HardDetailPage);
 }

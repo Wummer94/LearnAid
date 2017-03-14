@@ -36,6 +36,5 @@ export class CardDetailPage {
       this.navCtrl.pop();
   }
   
-  // change the page and now you can add new easy Cards in Input Failds
 
 }
