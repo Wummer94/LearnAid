@@ -6,7 +6,7 @@ LearnAid helps you learn all the topics according to your ideas with a card syst
 
 ## Installation
 
-###Start projekt
+### Start projekt
 * git clone https://github.com/Wummer94/LearnAid
 * cd LearnAid
 * npm i
