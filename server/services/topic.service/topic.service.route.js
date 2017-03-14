@@ -10,6 +10,9 @@ exports.import = function (_app, _database) {
             controller.getTopic(req, res, _database);
         })
         .post('/api/v1/topic', (req, res) => {
-            controller.createProject(req, res, _database);
+            controller.createTopic(req, res, _database);
+        })
+        .delete('/api/v1/project/:id?', function (req, res) {
+            controller.deleteProject(req, res, _database);
         })
 }

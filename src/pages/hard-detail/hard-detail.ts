@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import {HardCard} from '../../providers/hard-card.provider';
+
 /*
   Generated class for the HardDetail page.
 
@@ -14,15 +16,18 @@ import { NavController, NavParams } from 'ionic-angular';
 export class HardDetailPage {
 
   public toEdit = false;
+  public newHardCard = new Object();
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public HardCard:HardCard) {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad HardDetailPage');
+  // add a new hard Card 
+  addHardCard(){
+    this.HardCard.addHardTheme(this.newHardCard);
   }
-
+  
+  // change the page and now you can add new medium Cards in Input Failds
     Edit(){
     this.toEdit = !this.toEdit;
   }

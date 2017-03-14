@@ -18,13 +18,15 @@
    <div>
     <h1 *ngIf="!toEdit">Question</h1>
     <h2></h2>
-    <input *ngIf="toEdit" placeholder="Peter"/>
+    <input *ngIf="toEdit" [(ngModel)]="newHardCard.hardThemeQuestion" placeholder="Peter"/>
   </div>
   <div>
     <h1 *ngIf="!toEdit">Answer</h1>
     <h2></h2>
-    <input *ngIf="toEdit" placeholder="Peter"/>
+    <input *ngIf="toEdit" [(ngModel)]="newHardCard.hardThemeAnswer" placeholder="Peter"/>
   </div>
+
+  <button  ion-button *ngIf="toEdit" (click)='addHardCard()' block>Sign In</button>
 
   <ion-fab bottom right>
     <button ion-fab (click)="Edit()"><ion-icon name="add"></ion-icon></button>

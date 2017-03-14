@@ -42,6 +42,37 @@ exports.getTopic = (req, res) => {
     }
 }
 
+exports.createTopic = (req, res, database) => {
+
+    console.log(req.body);
+
+    let name = req.body.name;
+
+    if (name == null) {
+        let error = new Object({
+            "msg": "Name not send",
+            "errorCode": "5.2.1"
+        })
+        res.status(400).send(JSON.stringify(error))
+        return
+    }
+
+
+    let insertQuery = "INSERT INTO `topic` (`name`) VALUES ("+ database.escapeString(name) +");";
+    database.execQuery(insertQuery,
+        function (results) {
+            res.status(200).send({
+                "msg": "Project created!"
+            });
+        }, function (error) {
+            console.log(error);
+            res.status(404).send({
+                "msg": "Error while creating project",
+                "errorCode": "5.2.4"
+            });
+        })
+}
+
 exports.createProject = (req, res, database) => {
 
     console.log(req.body);
@@ -58,7 +89,7 @@ exports.createProject = (req, res, database) => {
     }
 
 
-    let insertQuery = "INSERT INTO `topic` (`id_topic`, `name`) VALUES ("+ name +");";
+    let insertQuery = "INSERT INTO `topic` (`name`) VALUES ("+ database.escapeString(name) +");";
     database.execQuery(insertQuery,
         function (results) {
             res.status(200).send({
@@ -72,4 +103,34 @@ exports.createProject = (req, res, database) => {
             });
         })
 }
+
+exports.deleteProject = (req, res, database) => {
+
+      let id_topic = req.params.id_topic;
+    if (id_topic == null || Number.isNaN(id_topic)) {
+        let error = new Object({
+            "msg": "Name not send",
+            "errorCode": "5.3.1"
+        })
+        res.status(400).send(JSON.stringify(error))
+        return;
+    }
+
+
+    let insertQuery = "INSERT INTO `topic` (`name`) VALUES ("+ database.escapeString(name) +");";
+    database.execQuery(insertQuery,
+        function (results) {
+            res.status(200).send({
+                "msg": "Project created!"
+            });
+        }, function (error) {
+            console.log(error);
+            res.status(404).send({
+                "msg": "Error while creating project",
+                "errorCode": "5.2.4"
+            });
+        })
+}
+
+
 

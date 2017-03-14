@@ -20,18 +20,15 @@ import {Topic} from '../../providers/topic.provider';
 export class TopicDetailPage {
 
   public topic = new Array;
+  public newTopic = new Object();
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public Topic:Topic) {
     this.topic = Topic.getAllTopics();
   
   }
 
-  saveTopic(topic:string){
-    // this.Topic.addTopicToApi(this.topic)
-    let newTopic = new Object();
-    // newTopic['id'] = this.topic['id']++;
-    newTopic['topicName'] =  this.topic;
-    this.Topic.addTopic(newTopic);
+  saveTopic(){
+    this.Topic.addTopic(this.newTopic);
     this.navCtrl.setRoot(TopicPage);
   }
 

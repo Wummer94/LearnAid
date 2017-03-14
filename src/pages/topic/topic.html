@@ -15,9 +15,12 @@
 
 <ion-content padding>
   <ion-list>
-  <button ion-item *ngFor="let topic of topics" (click)="topicSelected(topic)">
+  <ion-item ion-item *ngFor="let topic of topics" (click)="topicSelected(topic)">
     {{ topic.topicName }}
-  </button>  
+    <button> - </button>
+  </ion-item>
+
+
 </ion-list>
   <ion-fab bottom right>
     <button ion-fab (click)="newTopic()"><ion-icon name="add"></ion-icon></button>

@@ -16,12 +16,18 @@ import {MediumCard} from '../../providers/medium-card.provider';
 export class MediumDetailPage {
  
   public toEdit = false;
-  public mediumCard;
+  public newMediumCard = new Object();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public MediumCard:MediumCard) {
-    this.mediumCard = MediumCard.getAllMediumThemes();
   }
 
+
+  // add a new medium Card 
+  addMediumCard(){
+    this.MediumCard.addMediumTheme(this.newMediumCard);
+  }
+
+    // change the page and now you can add new medium Cards in Input Failds
     Edit(){
     this.toEdit = !this.toEdit;
   }
