@@ -25,11 +25,10 @@ export class MediumDetailPage {
   // add a new medium Card 
   addMediumCard(){
     this.MediumCard.addMediumTheme(this.newMediumCard);
+    this.navCtrl.pop();
   }
 
     // change the page and now you can add new medium Cards in Input Failds
-    Edit(){
-    this.toEdit = !this.toEdit;
-  }
+
 
 }

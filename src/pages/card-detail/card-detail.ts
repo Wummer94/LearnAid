@@ -25,17 +25,17 @@ export class CardDetailPage {
   public easyCard = new Array;
   public newEasyCard = new Object(); 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public EasyCard: EasyCard) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _easyCard: EasyCard) {
+
+
   }
 
   // add a new easy Card 
   addEasyCard(){
-    this.EasyCard.addEasyTheme(this.newEasyCard)
+      this._easyCard.addEasyTheme(this.newEasyCard)
+      this.navCtrl.pop();
   }
   
   // change the page and now you can add new easy Cards in Input Failds
-  Edit(){
-    this.toEdit = !this.toEdit;
-  }
 
 }

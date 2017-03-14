@@ -37,7 +37,7 @@ export class ThemePage {
     this.hardThemes = HardCard.getAllHardThemes();
   }
 
-  selectListItem(type) {
+  selectListItem(type, id) {
     let detailPage;
     if (type == 'easy') {
       detailPage = CardDetailPage;
@@ -50,7 +50,7 @@ export class ThemePage {
     }
 
     if (detailPage) {
-      this.navCtrl.push(detailPage, {}); //id: item.id 
+      this.navCtrl.push(detailPage, {id: id}); //id: item.id 
     }
   }
 

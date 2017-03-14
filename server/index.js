@@ -6,6 +6,7 @@ database.connectDatabase();
 
 
 var topic = require('./services/topic.service/topic.service.route');
+var easyCard = require('./services/easyCard.service/easyCard.service.route')
 console.log(topic);
 
 var app = express()
@@ -24,6 +25,7 @@ app.use(function (req, res, next){
 
 
 topic.import(app, database);
+easyCard.import(app, database);
 
 
 

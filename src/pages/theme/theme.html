@@ -32,7 +32,7 @@
 
   <div [ngSwitch]="manageType">
     <ion-list *ngSwitchCase="'easy'">
-    <ion-item *ngFor="let theme of easyThemes" (click)="selectListItem('easy')">
+    <ion-item *ngFor="let theme of easyThemes" (click)="selectListItem('easy', theme.id)">
         <h2>{{theme.easyThemeQuestion}}</h2>
       </ion-item>
       <ion-fab bottom right>
@@ -57,11 +57,6 @@
     <button ion-fab (click)="newHardTopic()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
     </ion-list>
-
-    <ion-list *ngSwitchCase="'settings'">
-      
-    </ion-list>
-
   </div>
 
 </ion-content>

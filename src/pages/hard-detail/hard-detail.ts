@@ -15,7 +15,7 @@ import {HardCard} from '../../providers/hard-card.provider';
 })
 export class HardDetailPage {
 
-  public toEdit = false;
+ 
   public newHardCard = new Object();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public HardCard:HardCard) {
@@ -25,11 +25,10 @@ export class HardDetailPage {
   // add a new hard Card 
   addHardCard(){
     this.HardCard.addHardTheme(this.newHardCard);
+    this.navCtrl.pop();
   }
   
   // change the page and now you can add new medium Cards in Input Failds
-    Edit(){
-    this.toEdit = !this.toEdit;
-  }
+
 
 }

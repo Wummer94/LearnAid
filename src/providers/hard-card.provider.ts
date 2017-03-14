@@ -55,10 +55,6 @@ deleteHardTheme(id) {
 
 generateHardThemeData(){
   let hardThemes = new Object();
-  hardThemes['id']=0;
-  hardThemes['hardThemeQuestion'] = "How much is a King worth ?";
-  hardThemes['hardThemeAnswer'] = "Queens value is nine Pawns";
-  this.addHardTheme(hardThemes);
 }
 
 }

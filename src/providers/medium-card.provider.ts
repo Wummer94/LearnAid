@@ -55,10 +55,7 @@ deleteMediumTheme(id) {
 
 generateMediumThemeData(){
   let mediumThemes = new Object();
-  mediumThemes['id']=0;
-  mediumThemes['mediumThemeQuestion'] = "How much is a Tower worth ?";
-  mediumThemes['mediumThemeAnswer'] = "Queens value is nine Pawns";
-  this.addMediumTheme(mediumThemes);
+ 
 }
 
 }

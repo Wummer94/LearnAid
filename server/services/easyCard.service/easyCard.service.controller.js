@@ -1,6 +1,6 @@
 // Get a all topics
 exports.getAllTopics = (req, res, database) => {
-        let sqlString = "SELECT * FROM topic";
+        let sqlString = "SELECT * FROM topic WHERE id_topic = 1";
 
     database.execQuery(sqlString,
         function (results) {
@@ -57,7 +57,8 @@ exports.createTopic = (req, res, database) => {
         return
     }
 
-
+   // INSERT INTO `easycard` (`id_easyCard`, `easyAnswer`, `easyQuestion`) VALUES (NULL, 'Was ist rot?', 'Feuer');
+   // INSERT INTO `haseasycard` (`id`, `id_topic`, `id_easycard`) VALUES (NULL, '1', '1');
     let insertQuery = "INSERT INTO `topic` (`name`) VALUES ("+ database.escapeString(name) +");";
     database.execQuery(insertQuery,
         function (results) {

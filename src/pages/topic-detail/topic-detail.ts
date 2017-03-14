@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { ToastController } from 'ionic-angular';
+
 //Pages
 import { TopicPage } from '../topic/topic';
 
@@ -19,17 +21,14 @@ import {Topic} from '../../providers/topic.provider';
 })
 export class TopicDetailPage {
 
-  public topic = new Array;
+
   public newTopic = new Object();
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public Topic:Topic) {
-    this.topic = Topic.getAllTopics();
-  
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController, public navParams: NavParams, public Topic:Topic) {
   }
-
+  
   saveTopic(){
-    this.Topic.addTopic(this.newTopic);
+    this.Topic.addTopicToApi(this.newTopic);
     this.navCtrl.setRoot(TopicPage);
   }
-
 }

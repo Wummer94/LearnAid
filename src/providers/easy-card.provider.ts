@@ -55,10 +55,6 @@ deleteEasyThemes(id) {
 
 generateEasyThemeData(){
   let newEasyTheme = new Object();
-  newEasyTheme['id']=0;
-  newEasyTheme['easyThemeQuestion'] = "How much is a queen worth ?";
-  newEasyTheme['easyThemeAnswer'] = "Queens value is nine Pawns";
-  this.addEasyTheme(newEasyTheme);
 }
 
 }

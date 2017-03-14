@@ -13,8 +13,8 @@ export class Topic {
   public topics = new Array();
 
   constructor(public connection: ConnectionProvider) {
-   // this.loadTopicsFromAPI();
-    this.generateTopicData();
+   this.loadTopicsFromAPI();
+   // this.generateTopicData();
   }
 
   getTopicKeyByID(id){
@@ -26,22 +26,22 @@ export class Topic {
  }
 
   loadTopicsFromAPI() {
- //  var asd = this;
- //   this.connection.getReqeuest('/api/v1/topics', function (results) {
- //     asd.topics = Object.assign(asd.topics,results);
- //     console.log(asd.topics);
- //   });
+  var asd = this;
+    this.connection.getReqeuest('/api/v1/topics', function (results) {
+     asd.topics = Object.assign(asd.topics,results);
+     console.log(asd.topics);
+   });
   }
 
 
   addTopicToApi(topics) {
-  //  var h = this;
-  //  return this.connection.postReqeuest('/api/v1/topic', topics, function (results) {
-  //    if (results.errorCode == null) {
-  //      h.loadTopicsFromAPI();
-  //      return this.getTopicById(topics.id);
-  //    }
-  //  });
+    var h = this;
+    return this.connection.postReqeuest('/api/v1/topic', topics, function (results) {
+      if (results.errorCode == null) {
+        h.loadTopicsFromAPI();
+        return h.getTopicById(topics.id);
+      }
+    });
   }
 
  deleteTopic(id){

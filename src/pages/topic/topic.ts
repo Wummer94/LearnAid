@@ -24,13 +24,17 @@ export class TopicPage {
   public topics;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public Topic:Topic ) {
-    // this.topics = Topic.topics;
-    this.topics = Topic.getAllTopics();
+    this.topics = Topic.topics;
+    //this.topics = Topic.getAllTopics();
     console.log(this.topics);
   }
 
 topicSelected(item){
   this.navCtrl.push(ThemePage, {id: item.id});
+}
+
+deleteTopic(){
+  this.Topic.deleteTopic(this.topics);
 }
 
 newTopic(){

@@ -15,22 +15,20 @@
 
 <ion-content padding>
 
-  <div>
-    <h1 *ngIf="!toEdit">Question</h1>
-    <h2></h2>
-    <input *ngIf="toEdit" [(ngModel)]="newMediumCard.mediumThemeQuestion" placeholder="Question"/>
-  </div>
-  <div>
-    <h1 *ngIf="!toEdit">Answer</h1>
-    <h2></h2>
-    <input *ngIf="toEdit" [(ngModel)]="newMediumCard.mediumThemeAnswer" placeholder="Answer"/>
-  </div>
-  
-  <button  ion-button *ngIf="toEdit" (click)=' addMediumCard()' block>Sign In</button>
+    <ion-item>
+    <ion-label fixed>Question</ion-label>
+    <ion-input [(ngModel)]="newMediumCard.mediumThemeQuestion" ></ion-input>
+    </ion-item>
 
-  <ion-fab bottom right>
-    <button ion-fab (click)="Edit()"><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
+  
+    <ion-item>
+    <ion-label fixed>Answer</ion-label>
+    <ion-input [(ngModel)]="newMediumCard.mediumThemeAnswer" ></ion-input>
+  </ion-item>
+
+  
+  <button  ion-button class="Button"  (click)="addMediumCard()" block>Sign In</button>
+
 
 
 </ion-content>
