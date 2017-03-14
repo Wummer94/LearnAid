@@ -19,23 +19,20 @@ import {Topic} from '../../providers/topic.provider';
 })
 export class TopicDetailPage {
 
-  public topic = new Object({
-
-  });
+  public topic = new Array;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public Topic:Topic) {
     this.topic = Topic.getAllTopics();
   
   }
 
-  saveTopic(){
-    this.Topic.addTopicToApi(this.topic)
-    
-    //let newTopic = new Object();
-    //newTopic['id'] = this.topics['id']++;
-    //newTopic['topicName'] =  topic;
-    //this.Topic.addTopic(newTopic);
-    //this.navCtrl.setRoot(TopicPage);
+  saveTopic(topic:string){
+    // this.Topic.addTopicToApi(this.topic)
+    let newTopic = new Object();
+    // newTopic['id'] = this.topic['id']++;
+    newTopic['topicName'] =  this.topic;
+    this.Topic.addTopic(newTopic);
+    this.navCtrl.setRoot(TopicPage);
   }
 
 }

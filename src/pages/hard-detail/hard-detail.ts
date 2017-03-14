@@ -2,24 +2,28 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /*
-  Generated class for the CardDetail page.
+  Generated class for the HardDetail page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-card-detail',
-  templateUrl: 'card-detail.html'
+  selector: 'page-hard-detail',
+  templateUrl: 'hard-detail.html'
 })
-export class CardDetailPage {
+export class HardDetailPage {
 
   public toEdit = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
-  
-  Edit(){
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HardDetailPage');
+  }
+
+    Edit(){
     this.toEdit = !this.toEdit;
   }
 

@@ -3,6 +3,8 @@ import { NavController, NavParams } from 'ionic-angular';
 
 //Pages
 import {CardDetailPage} from '../card-detail/card-detail';
+import {HardDetailPage} from '../hard-detail/hard-detail';
+import {MediumDetailPage} from '../medium-detail/medium-detail';
 
 
 //Providers
@@ -35,9 +37,23 @@ export class ThemePage {
     this.hardThemes = HardCard.getAllHardThemes();
   }
 
-themeSelected(item){
-  this.navCtrl.push(CardDetailPage, {id: item.id})
-}
+  selectListItem(type) {
+    let detailPage;
+    if (type == 'easy') {
+      detailPage = CardDetailPage;
+    }
+    if (type == 'medium') {
+      detailPage = MediumDetailPage;
+    }
+    if (type == 'hard') {
+      detailPage = HardDetailPage;
+    }
+
+    if (detailPage) {
+      this.navCtrl.push(detailPage, {}); //id: item.id 
+    }
+  }
+
 
 newEasyTheme(){
  let easyCard = new Object()
@@ -58,7 +74,6 @@ newHardTopic(){
   hardCard['hardThemeQuestion'] = "New card question";
   hardCard['hardThemeAnswer'] = "New card question";
   this.HardCard.addHardTheme(hardCard);
-
 }
 
 }

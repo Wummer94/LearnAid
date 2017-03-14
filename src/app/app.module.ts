@@ -6,8 +6,12 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { ThemePage } from '../pages/theme/theme';
 import { TopicPage } from '../pages/topic/topic';
+// easy Datail Page
 import { CardDetailPage } from '../pages/card-detail/card-detail';
 import {TopicDetailPage} from '../pages/topic-detail/topic-detail';
+import {MediumDetailPage} from '../pages/medium-detail/medium-detail';
+import {HardDetailPage} from '../pages/hard-detail/hard-detail';
+
 
 
 // Providers
@@ -25,7 +29,9 @@ import{ConnectionProvider} from '../providers/connection.provider';
     ThemePage,
     TopicPage,
     CardDetailPage,
-    TopicDetailPage
+    TopicDetailPage,
+    MediumDetailPage,
+    HardDetailPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -37,7 +43,9 @@ import{ConnectionProvider} from '../providers/connection.provider';
     ThemePage,
     TopicPage,
     CardDetailPage,
-    TopicDetailPage
+    TopicDetailPage,
+    MediumDetailPage,
+    HardDetailPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, 
   Account, 

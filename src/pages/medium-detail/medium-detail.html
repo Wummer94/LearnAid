@@ -1,5 +1,5 @@
 <!--
-  Generated template for the CardDetail page.
+  Generated template for the MediumDetail page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Easy Detail Page</ion-title>
+    <ion-title>Medium Detail Page</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,21 +15,24 @@
 
 <ion-content padding>
 
-   <div>
+  <div>
     <h1 *ngIf="!toEdit">Question</h1>
     <h2></h2>
     <input *ngIf="toEdit" placeholder="Peter"/>
   </div>
-  
   <div>
     <h1 *ngIf="!toEdit">Answer</h1>
     <h2></h2>
     <input *ngIf="toEdit" placeholder="Peter"/>
   </div>
-
+  
+  <div>
+    <button *ngIf="toEdit" ion-button (click)="Save()">Save</button>
+  </div>
 
   <ion-fab bottom right>
     <button ion-fab (click)="Edit()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
+
 
 </ion-content>
